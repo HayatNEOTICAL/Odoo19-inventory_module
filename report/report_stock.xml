@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_stock_template">
+            <t t-call="web.basic_layout">
+                <div class = "page">
+                    <h2> Stock Card: <t t-esc="doc.product_id.name"/></h2>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>QTY</th>
+                                <th>Ref</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="doc.move_ids" t-as="m">
+                                <tr>
+                                    <td><t t-esc="m.date"/></td>
+                                    <td><t t-esc="m.move_type"/></td>
+                                    <td><t t-esc="m.qty"/></td>
+                                    <td><t t-esc="m.references"/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>      
+        </template>
+    </data>
+</odoo>

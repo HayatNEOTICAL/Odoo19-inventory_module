@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="warehouse_location_list_view" model="ir.ui.view">
+        <field name="name">Warehouse Location List View</field>
+        <field name="model">warehouse.location</field>
+        <field name="arch" type="xml">
+            <list string="Warehouse Location">
+                <field name="name" />
+                <field name="code" />
+                <field name="capasity" />
+            </list>
+        </field>
+    </record>
+
+    <record id="warehouse_location_form_view" model="ir.ui.view">
+        <field name="name">Warehouse Location Form View</field>
+        <field name="model">warehouse.location</field>
+        <field name="arch" type="xml">
+            <form string="Warehouse Location">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="code" />
+                        <field name="capasity" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

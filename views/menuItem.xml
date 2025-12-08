@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="warehouse_product_root"
+        name="Pengelelolaan Gudang"
+        sequence="3"/>
+    
+    <menuitem
+        id="warehouse_product_child"
+        name="Product"
+        action="inventory_module.action_warehouse_product"
+        parent="inventory_module.warehouse_product_root"
+        sequence="10"/>
+    
+    <menuitem
+        id="warehouse_stock_transaction_child"
+        name="Stock Transaction"
+        action="inventory_module.action_stock_transaction"
+        parent="inventory_module.warehouse_product_root"
+        sequence="11"/>
+
+    <menuitem
+        id="warehouse_location_child"
+        name="Warehouse Locations"
+        action="inventory_module.action_warehouse_location"
+        parent="inventory_module.warehouse_product_root"
+        sequence="12"/>
+
+</odoo>

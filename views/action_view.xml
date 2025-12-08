@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- action dari warehouse product -->
+    <record id="action_warehouse_product" model="ir.actions.act_window">
+        <field name="name">Warehouse Product</field>
+        <field name="res_model">warehouse.product</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- list view dari warehouse product -->
+    <record id="warehouse_product_list_action_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">list</field>
+        <field name="act_window_id" ref="inventory_module.action_warehouse_product"/>
+        <field name="view_id" ref="inventory_module.warehouse_product_list_view"/>
+    </record>
+
+    <!-- kanban view dari warehouse product -->
+    <record id="warehouse_product_kanban_action_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">kanban</field>
+        <field name="act_window_id" ref="inventory_module.action_warehouse_product"/>
+        <field name="view_id" ref="inventory_module.warehouse_product_kanban_view"/>
+    </record>
+
+    <!-- form view dari warehouse product -->
+    <record id="warehouse_product_form_action_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3"/>
+        <field name="view_mode">form</field>
+        <field name="act_window_id" ref="inventory_module.action_warehouse_product"/>
+        <field name="view_id" ref="inventory_module.warehouse_product_form_view"/>
+    </record> 
+
+        <!-- action dari stock_transactions -->
+    <record id="action_stock_transaction" model="ir.actions.act_window">
+        <field name="name">Stock Transactions</field>
+        <field name="res_model">stock.transactions</field>
+        <field name="view_mode">list,form,kanban</field>
+    </record>
+
+    <!-- list view dari stock transaction -->
+    <record id="stock_transaction_list_action_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">list</field>
+        <field name="act_window_id" ref="inventory_module.action_stock_transaction"/>
+        <field name="view_id" ref="inventory_module.stock_transaction_list_view"/>
+    </record>
+
+    <!-- form view dari stock transaction -->
+    <record id="stock_transaction_form_action_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">form</field>
+        <field name="act_window_id" ref="inventory_module.action_stock_transaction"/>
+        <field name="view_id" ref="inventory_module.stock_transaction_form_view"/>
+    </record>
+
+    <!-- action dari warehouse location -->
+    <record id="action_warehouse_location" model="ir.actions.act_window">
+        <field name="name">Warehouse Location</field>
+        <field name="res_model">warehouse.location</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- list view dari warehouse location -->
+    <record id="warehouse_location_list_action_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">list</field>
+        <field name="act_window_id" ref="inventory_module.action_warehouse_location"/>
+        <field name="view_id" ref="inventory_module.warehouse_location_list_view"/>
+    </record>
+
+    <!-- form view dari warehouse location -->
+    <record id="warehouse_location_form_action_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">form</field>
+        <field name="act_window_id" ref="inventory_module.action_warehouse_location"/>
+        <field name="view_id" ref="inventory_module.warehouse_location_form_view"/>
+    </record>
+
+</odoo>

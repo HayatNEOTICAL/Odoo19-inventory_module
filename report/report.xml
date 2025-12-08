@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <report id = "report_stock_id"
+                string = "Print Laporan Stock Transaction"
+                model = "stock.transactions"
+                report_type = "qweb-pdf"
+                name = "inventory_module.report_stock_template"
+        />
+    </data>
+
+
+</odoo>

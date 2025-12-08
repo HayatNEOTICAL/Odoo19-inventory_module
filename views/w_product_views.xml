@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="warehouse_product_list_view" model="ir.ui.view">
+        <field name="name">Warehouse Product List</field>
+        <field name="model">warehouse.product</field>
+        <field name="arch" type="xml">
+            <list string="">
+                <field name="sku"/>
+                <field name="name"/>
+                <field name="category"/>
+                <field name="stock"/>
+                <field name="location_id" />
+            </list>
+        </field>
+    </record>
+
+    <record id="warehouse_product_form_view" model="ir.ui.view">
+        <field name="name">Form Warehouse Product</field>
+        <field name="model">warehouse.product</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group String = 'Warehouse Produk'>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="sku" />
+                        <field name="category" />
+                        <field name="stock" />
+                        <field name="location_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="warehouse_product_kanban_view" model="ir.ui.view">
+        <field name="name">Warehouse Product Kanban View</field>
+        <field name="model">warehouse.product</field>
+        <field name="arch" type="xml">
+            <kanban class = 'o_card_mobile'>
+                <field name="name" />
+                <field name="sku" />
+                <field name="category"/>
+                <field name="stock" />
+                <field name="location_id" />
+                <templates>
+                    <t t-name="card">
+                        <div t-attf-class="oe_card">
+                            <div class="oe_card_header">
+                                <div class="oe_card_header" style="display: flex; justify-content: space-between; align-items: center;">
+                                    <strong><span><t t-esc="record.name.value"/></span></strong>
+                                    <strong><span><t t-esc="record.sku.value"/></span></strong>
+                                </div>
+                                <div class="oe_card_bottom">
+                                    <div>
+                                        <span><t t-esc="record.category.value"/></span>
+                                    </div>
+                                    <div>
+                                        Stock <span><t t-esc="record.stock.value"/></span>
+                                    </div>
+                                    <div>
+                                        <span><t t-esc="record.location_id.value"/></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+</odoo>
