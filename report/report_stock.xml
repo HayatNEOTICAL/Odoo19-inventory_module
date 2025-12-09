@@ -1,32 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <template id="report_stock_template">
-            <t t-call="web.basic_layout">
-                <div class = "page">
-                    <h2> Stock Card: <t t-esc="doc.product_id.name"/></h2>
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Type</th>
-                                <th>QTY</th>
-                                <th>Ref</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <t t-foreach="doc.move_ids" t-as="m">
+
+    <template id="report_stock_transaction_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>
+                            <span t-field="o.product_id.name"/>
+                        </h2>
+                        <table class="table condensed">
+                            <thead>
                                 <tr>
-                                    <td><t t-esc="m.date"/></td>
-                                    <td><t t-esc="m.move_type"/></td>
-                                    <td><t t-esc="m.qty"/></td>
-                                    <td><t t-esc="m.references"/></td>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Qty</th>
+                                    <th>Ref</th>
                                 </tr>
-                            </t>
-                        </tbody>
-                    </table>
-                </div>
-            </t>      
-        </template>
-    </data>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th><t t-esc="o.date"/></th>
+                                    <th><t t-esc="o.move_type"/></th>
+                                    <th><t t-esc="o.qty"/></th>
+                                    <th><t t-esc="o.references"/></th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
 </odoo>

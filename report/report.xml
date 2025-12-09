@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <data>
-        <report id = "report_stock_id"
-                string = "Print Laporan Stock Transaction"
-                model = "stock.transactions"
-                report_type = "qweb-pdf"
-                name = "inventory_module.report_stock_template"
-        />
-    </data>
+    <record id="report_stock_transaction" model="ir.actions.report">
+        <field name="name"> Print Stock Transaction</field>
+        <field name="model">stock.transactions</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">inventory_module.report_stock_transaction_template</field>
+        <field name="report_file">inventory_module.report_stock_transaction_template</field>
+        <field name="binding_type">report</field>
+    </record>
 
 
 </odoo>
